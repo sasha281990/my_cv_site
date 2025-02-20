@@ -90,3 +90,119 @@ section {
 .experience__details {
   line-height: 1.5;
 }
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.cv {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section__velue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.contacts-wrapper {
+  margin-top: 20px;
+}
+
+.contacts {
+  margin-bottom: 10px;
+}
+
+.contact__type {
+  font-weight: bold;
+}
+
+.contact__value a {
+  text-decoration: none;
+  color: #0073e6;
+}
+
+.experience__details ul {
+  padding-left: 20px;
+}
+
+/* Медиазапросы для адаптивности */
+
+/* Для экранов меньше 768px (мобильные устройства) */
+@media (max-width: 768px) {
+  .cv {
+    padding: 10px;
+  }
+
+  .section__velue {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .responsive {
+    width: 100%;
+    height: auto;
+  }
+
+  .contacts-wrapper {
+    text-align: center;
+  }
+
+  .experience__date {
+    font-size: 14px;
+  }
+
+  .experience__description {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
+
+/* Для экранов меньше 480px (маленькие мобильные устройства) */
+@media (max-width: 480px) {
+  .cv {
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .contact__type, .contact__value {
+    font-size: 14px;
+  }
+
+  .experience__details ul {
+    padding-left: 15px;
+  }
+}
