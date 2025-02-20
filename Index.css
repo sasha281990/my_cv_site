@@ -1,4 +1,4 @@
-﻿html {
+html {
   font-family: Roboto, sans-serif;
   --primary-color: #2f80ed;
   --secondary-color: #333333;
@@ -8,13 +8,13 @@
 body {
   margin: 0;
   background: linear-gradient(50deg, #9796f0, #f9fab4);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
 h1 {
   color: var(--primary-color);
   margin-bottom: 0.25em;
-  top: 50%;
-  position: relative;
 }
 
 h2 {
@@ -22,41 +22,34 @@ h2 {
   font-size: 1em;
   margin-top: 0;
   margin-bottom: 1em;
-  position: relative;
 }
 
 h3 {
   color: var(--primary-color);
-  position: relative;
 }
 
 a {
   color: var(--primary-color);
+  text-decoration: none;
 }
 
 section {
   margin-bottom: 5em;
-  position: relative;
 }
 
 .responsive {
-  position: flex;
-  top: 5px;
-  right: 350px;
   width: 35%;
-  height: all;
-  
-  
+  height: auto;
 }
 
 .section__velue {
   display: flex;
-  left: 0px;
+  align-items: center;
 }
 
 .contacts-wrapper {
   margin-top: auto;
-  margin-right: 250px;
+  margin-right: 20px;
   margin-left: 20px;
 }
 
@@ -67,12 +60,8 @@ section {
 }
 
 .contacts {
-  margin-bottom: 0em;
+  margin-bottom: 1em;
   font-weight: 450;
-}
-
-.contact {
-  display: table-footer-group;
 }
 
 .contact__type {
@@ -89,48 +78,6 @@ section {
 
 .experience__details {
   line-height: 1.5;
-}
-/* Общие стили */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
-.cv {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.section__velue {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.responsive {
-  max-width: 100%;
-  height: auto;
-}
-
-.contacts-wrapper {
-  margin-top: 20px;
-}
-
-.contacts {
-  margin-bottom: 10px;
-}
-
-.contact__type {
-  font-weight: bold;
-}
-
-.contact__value a {
-  text-decoration: none;
-  color: #0073e6;
 }
 
 .experience__details ul {
@@ -152,11 +99,12 @@ body {
 
   .responsive {
     width: 100%;
-    height: auto;
   }
 
   .contacts-wrapper {
     text-align: center;
+    margin-right: 0;
+    margin-left: 0;
   }
 
   .experience__date {
