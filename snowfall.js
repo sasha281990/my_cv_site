@@ -14,23 +14,54 @@
  * @params flakeColor - color of snowflake, #FFFFFF by default
  * @example $.fn.snow({ maxSize: 200, newOn: 1000 });
  */
-// script.js
-
-document.addEventListener('DOMContentLoaded', () => {
-    const cloudsContainer = document.querySelector('.clouds');
-    const clouds = document.querySelectorAll('.cloud');
-
-    clouds.forEach(cloud => {
-        // Случайная задержка анимации
-        const duration = Math.random() * 20 + 20; // от 20s до 40s
-        cloud.style.animationDuration = `${duration}s`;
-        
-        // Случайный масштаб облака
-        const scale = Math.random() * 0.5 + 0.75; // от 0.75 до 1.25
-        cloud.style.transform = `scale(${scale})`;
-        
-        // Случайная прозрачность
-        const opacity = Math.random() * 0.3 + 0.5; // от 0.5 до 0.8
-        cloud.style.opacity = opacity;
-    });
-});
+(function($){
+	
+	$.fn.snow = function(options){
+	
+			var $flake 			= $('<div id="flake" />').css({'position': 'absolute', 'top': '-50px'}).html('&#10052;'),
+				documentHeight 	= $(document).height(),
+				documentWidth	= $(document).width(),
+				defaults		= {
+									minSize		: 10,
+									maxSize		: 20,
+									newOn		: 500,
+									flakeColor	: "#FFFFFF"
+								},
+				options			= $.extend({}, defaults, options);
+				
+			
+			var interval		= setInterval( function(){
+				var startPositionLeft 	= Math.random() * documentWidth - 100,
+				 	startOpacity		= 0.5 + Math.random(),
+					sizeFlake			= options.minSize + Math.random() * options.maxSize,
+					endPositionTop		= documentHeight - 40,
+					endPositionLeft		= startPositionLeft - 100 + Math.random() * 200,
+					durationFall		= documentHeight * 10 + Math.random() * 5000;
+				$flake
+					.clone()
+					.appendTo('body')
+					.css(
+						{
+							left: startPositionLeft,
+							opacity: startOpacity,
+							'font-size': sizeFlake,
+							color: options.flakeColor
+						}
+					)
+					.animate(
+						{
+							top: endPositionTop,
+							left: endPositionLeft,
+							opacity: 0.2
+						},
+						durationFall,
+						'linear',
+						function() {
+							$(this).remove()
+						}
+					);
+			}, options.newOn);
+	
+	};
+	
+})(jQuery);
